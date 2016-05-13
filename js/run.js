@@ -296,6 +296,7 @@ function parseOutput(data, o, oTitle)
     var rstatus = parseInt(safeVar(data, "runtime.status"));
     var cerr = safeVar(data, "compilation.err");
     var rerr = safeVar(data, "runtime.err");
+    var defaultOutput = data.defaultOutput || '-- No output --';
 
     if (cstatus != 0)
     {
@@ -313,7 +314,7 @@ function parseOutput(data, o, oTitle)
         if ( cout != "")
             output = 'Compilation output: \n' + cout + "\n";
         
-        output += (stdout == "" && stderr == "" ? '-- No output --' : stdout);
+        output += (stdout == "" && stderr == "" ? defaultOutput : stdout);
 
         if (stderr != "") 
             output += stderr;

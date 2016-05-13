@@ -2018,3 +2018,8 @@ the home page, intro pitch and your-code-here layed out vertically */
 dt.d_decl:hover .decl_anchor {
     visibility: visible;
 }
+
+/* Style for the example run buttons on the Phobos library documentation */
+.d_example_buttons {
+    text-align: right;
+}
