@@ -1,0 +1,61 @@
+Ddoc
+
+$(D_S $(TITLE),
+
+$(DDOC_COMMENT
+    - Put your log (png/svg) to images/DORGs.
+    - max. dims: 200x100 (resize with e.g. `mogrify -resize 200x100 image.png`)
+    - if you need commas, use a paragraph `$(P ...)`
+)
+
+$(DIVC boxes orgs-using-d,
+    $(DORG Facebook, https://www.facebook.com, facebook.svg,
+        C Preprocessor warp and more infrastructure tools.
+    )
+    $(DORG Sociomantic, https://www.sociomantic.com, sociomantic.png,
+        Real-time bidding for eCommerce. $(LINK2 http://dconf.org/talks/clugston.html, DConf talk)
+    )
+    $(DORG Remedy Games, http://remedygames.com, remedy.svg,
+        $(P Triple-A game development, e.g. $(LINK2 http://www.quantumbreak.com/, Quantum Break)
+            (XBox One and Windows 10).
+        )
+    )
+    $(DORG Weka.IO, http://www.weka.io, weka.png,
+        Next generation of software defined storage.
+    )
+    $(DORG Funkwerk AG, http://www.funkwerk.com/en/, funkwerk.png,
+        Passenger information systems. $(LINK2 http://dconf.org/talks/rohe.html, DConf talk).
+    )
+    $(DORG eBay, https://ebay.com, ebay.svg,
+        E-commerce company. $(LINK2 https://github.com/eBay/tsv-utils-dlang, Github)
+    )
+    $(DORG RandomStorm, https://www.randomstorm.com, randomstorm.png,
+        Network security products and services.
+    )
+    $(DORG Economic modelling, http://www.economicmodeling.com, emsi.png,
+        $(P Data-driven modelling for economics, employers, job-seekers, students
+            and universities.
+        )
+    )
+    $(DORG SR Labs, http://www.srlabs.it, srlabs.png,
+        Eye Tracking Systems Integrator
+    )
+    $(DORG Infognition, http://www.infognition.com/, infognition.svg,
+        Video processing technologies and products. $(LINK2 http://www.infognition.com/blog/2014/why_d.html, Testimonial)
+    )
+    $(DORG Tamedia digital, http://tamediadigital.ch/?lang=en, tamedia_digital.png,
+         Largest media company in Switzerland. $(LINK2 https://github.com/tamediadigital, Github)
+    )
+)
+
+If your organization uses D in production and you want it listed on this page,
+please open a
+$(LINK2 https://github.com/dlang/$(PROJECT)/edit/master/$(SRCFILENAME), PR) or
+$(LINK2 https://issues.dlang.org/enter_bug.cgi?component=dlang.org&short_desc=Add%20(insert%20your%20organization)%20to%20the%20DORGs%20of%20D, issue)
+
+)
+
+Macros:
+	TITLE=Organizations using the D Language
+	DORGIMG=$(DIVC orgs-using-d-img-wrapper, <img src="$(ROOT_DIR)images/orgs-using-d/$0" />)
+    DORG=$(DIVC orgs-using-d-cell, $(LINK2 $2, $(DORGIMG $3)) $(H3 $1) $(P $4))

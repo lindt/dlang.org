@@ -147,7 +147,8 @@ $(DIVC boxes,
 
 $(DIVC whyd, $(SECTION2 Why D?,
 
-$(DIVC section, $(DIV, $(SECTION3 Convenience,
+$(DIVC section,
+$(DIV, $(SECTION3 Convenience,
 
 $(P D allows writing large code fragments without redundantly specifying types,
 like dynamic languages do. On the other hand, static inference deduces types and other
@@ -366,6 +367,23 @@ consistency. $(LINK2 spec/memory-safe-d.html, Read more).)
 
 )))
 
+$(DIVC section, $(DIV, $(SECTION3 Industry-proven,
+$(DIVC frontpage-orgs,
+    $(FRONTPAGE_ORG Facebook, https://www.facebook.com, facebook.svg,
+    )
+    $(FRONTPAGE_ORG eBay, https://ebay.com, ebay.svg,
+    )
+    $(FRONTPAGE_ORG Remedy Games, http://remedygames.com, remedy.svg,
+    )
+    $(FRONTPAGE_ORG Sociomantic, https://www.sociomantic.com, sociomantic.png,
+    )
+    <div id="frontpage-orgs-more">
+        $(LINK2 $(ROOT_DIR)/orgs-using-d.html, Show more organizations using D)
+    </div>
+))))
+
+
+
 )) $(COMMENT SECTION2 Why D?, DIVC whyd)
 ) $(COMMENT more)
 ) $(COMMENT SECTION1)
@@ -386,3 +404,5 @@ Macros:
     TOUR=$(DIVC item, $(SECTION4 $(LINK2 $1, $(TC i, fa fa-$2 big-icon)$3), $4))
     TOUR=$(DIVC item, $(SECTION4 $(TC i, fa fa-$1 big-icon)$2, $3))
     _=
+	FRONTPAGE_ORG_IMG=$(DIVC frontpage-orgs-img-wrapper, <img src="$(ROOT_DIR)images/orgs-using-d/$0" />)
+    FRONTPAGE_ORG=$(DIVC frontpage-orgs-cell, $(LINK2 $2, $(FRONTPAGE_ORG_IMG $3)) $(H3 $1) $(P $4))
