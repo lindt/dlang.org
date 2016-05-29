@@ -930,6 +930,11 @@ table td, table th, table caption
     padding: 0.3em;
 }
 
+table caption:empty
+{
+    padding: 0px;
+}
+
 table td
 {
     border: none;
@@ -1508,6 +1513,7 @@ div.changelog-nav
 .quickindex {
     font-weight: normal;
     background-color: #F5F5F5;
+    display: inline-block;
 }
 
 .quickindex a {
