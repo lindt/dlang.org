@@ -294,6 +294,8 @@ else if (…)
     …
 }
 -------------------------------
+    $(LI Selective imports require a space before and after the colon (`:`) like
+    `import std.range : zip`)
  )
 
 $(P
